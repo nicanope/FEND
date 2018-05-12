@@ -54,11 +54,11 @@ main {
 .project_container {
     display: flex;
     flex-wrap: wrap;
-    margin: 10px 0 100px 0;
+    margin: 10px 0 40px 0;
 }
 
 .project {
-    width: 100%;
+    width: 96%;
 }
 
 .project_img {
@@ -67,25 +67,117 @@ main {
 
 .project_det {
     background: #e5e5e5;
-    margin: 0;
-    padding: 3px 0;
-}
-
-.project_desc {
-
+    padding: 10px 2px 2px 15px;
+    width: 100%;
 }
 
 /* Footer (in mobile) and social links container */
 
+footer {
+    margin-top: 20px;
+}
 .social_cont {
     display: flex;
     width: 100%;
+    padding: 5px 15px;
+    margin-left: 20px;
 }
 
 .social{
     width: 33.3333%;
+    margin: 0;
 }
 
 .social_icon {
     width: 30%;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+}
+
+/* First break point @ 550px */
+@media screen and (min-width: 550px) {
+    
+    /* Header changes */
+
+    header {
+        display: flex;
+    }
+
+    .logo__container {
+        order: -1;
+        width: 30%;
+    }
+
+    .logo {
+       height: auto;
+    }
+
+    .heading_cont {
+        order: 0;
+        width: 70%;
+    }
+
+    .name {
+        width: 90%;
+        text-align: right;
+    }
+
+    .job {
+        width: 80%;
+        text-align: right;
+    }
+
+    /* Main and projects */
+
+    .project {
+        display: block;
+        width: 60%;
+        margin: 20px auto;
+    }
+
+    .project_det {
+        width: 96%;
+    }
+
+    /* footer and social */
+
+    .social_cont {
+        width: 70%;
+        margin: auto;
+    }
+}
+
+/* Second break point @ 750px */
+@media screen and (min-width: 750px) {
+    /* Header changes */
+    .name {
+        font-size: 3em;
+    }
+
+    .job {
+        font-size: 1.7em;
+    }
+
+    /* Main area and projects */
+    main {
+        width: 90%;
+        margin: auto;
+    }
+
+    .project_container {
+        margin: 40px 10px 60px;
+    }
+
+    .project {
+        width: 30%;
+        align-content: center;
+        margin: auto;
+    }
+
+    /* footer and social */
+    
+    .social_icon {
+        width: 20%;
+    }
 }
