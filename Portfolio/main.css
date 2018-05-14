@@ -61,6 +61,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     margin: 10px 0 40px 0;
+    width: 100%;
 }
 
 .project {
