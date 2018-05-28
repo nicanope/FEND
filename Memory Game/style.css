@@ -29,6 +29,10 @@ main {
     height: 40px;
 }
 
-.card img {
+.hidden {
     visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
 }
