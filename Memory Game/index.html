@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Memory Game!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">Memory Game!</h1>
+        <h3 class="subtitle">How fast can you match them?</h3>
+    </header>
+    <main class="main">
+        <div class="stats">
+            <table class="stats-table">
+                <tbody class="stats-table-body">
+                    <tr>
+                        <td class="score">stars</td>
+                        <td class="timer">time</td>
+                        <td class="moves">moves</td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+        <div class="game">
+            <table class="mem-table">
+                <tbody class="mem-table-body">
+                    <!-- all images for the cards are from fontAwesome -->
+                    <tr class="row row1">
+                        <td class="card bike1">
+                            <img src="images/bike.svg" alt="bike" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card alarm1">
+                            <img src="images/alarm-clock.svg" alt="alarm clock" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card anchor1">
+                            <img src="images/anchor.svg" alt="anchor" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card bath1">
+                            <img src="images/bath.svg" alt="bath" style="width:40px;height:40px;">
+                        </td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="card beer1">
+                            <img src="images/beer.svg" alt="beer" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card bolt1">
+                            <img src="images/bolt.svg" alt="bolt" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card child1">
+                            <img src="images/child.svg" alt="child" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card peace1">
+                            <img src="images/hand-peace.svg" alt="peace sign hand" style="width:40px;height:40px;">
+                        </td>
+                    </tr>
+                    <tr class="row row3">
+                        <td class="card bike2">
+                            <img src="images/bike.svg" alt="bike" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card alarm2">
+                            <img src="images/alarm-clock.svg" alt="alarm clock" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card anchor2">
+                            <img src="images/anchor.svg" alt="anchor" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card bath2">
+                            <img src="images/bath.svg" alt="bath" style="width:40px;height:40px;">
+                        </td>
+                    </tr>
+                    <tr class="row row4">
+                        <td class="card beer2">
+                            <img src="images/beer.svg" alt="beer" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card bolt2">
+                            <img src="images/bolt.svg" alt="bolt" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card child2">
+                            <img src="images/child.svg" alt="child" style="width:40px;height:40px;">
+                        </td>
+                        <td class="card peace2">
+                            <img src="images/hand-peace.svg" alt="peace sign hand" style="width:40px;height:40px;">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="restart">
+            <button name="restart-btn">Start over!</button>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer-text">Hey I'll be the footer one day, no worries, dude!</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
