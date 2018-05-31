@@ -6,6 +6,7 @@
     <title>Memory Game!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" media="screen" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 </head>
 <body>
@@ -18,71 +19,75 @@
             <table class="stats-table">
                 <tbody class="stats-table-body">
                     <tr>
-                        <td class="score">stars</td>
-                        <td class="timer">time</td>
-                        <td class="moves">moves</td>
+                        <td class="stat">
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </td>
+                        <td class="stat">time</td>
+                        <td class="stat">moves</td>
                     </tr>
                 </tbody>
             </table> 
         </div>
         <div class="game">
+            <!-- create a canvas here so that I can programmatically generate the cards to sit in here? -->
             <table class="mem-table">
                 <tbody class="mem-table-body">
-                    <!-- all images for the cards are from fontAwesome -->
                     <tr class="row">
                         <td class="card">
-                            <img class="hidden" src="images/bike.svg" alt="bike">
+                            <i class="fa fa-bicycle hidden"></i>
                         </td>
                         <td class="card">
-                            <img class="hidden" src="images/alarm-clock.svg" alt="alarm clock">
+                            <i class="fa fa-car hidden"></i>
                         </td>
                         <td class="card">
-                            <img class="hidden" src="images/anchor.svg" alt="anchor">
+                            <i class="fa fa-anchor hidden"></i>
                         </td>
                         <td class="card">
-                            <img class="hidden" src="images/bath.svg" alt="bath">
+                            <i class="fa fa-bath hidden"></i>
                         </td>
                     </tr>
                     <tr class="row">
                         <td class="card">
-                            <img class="hidden" src="images/beer.svg" alt="beer">
+                            <i class="fa fa-beer hidden"></i>
                         </td>
                         <td class="card">
-                            <img class="hidden" src="images/bolt.svg" alt="bolt">
+                            <i class="fa fa-bolt hidden"></i>
                         </td>
                         <td class="card">
-                            <img class="hidden" src="images/child.svg" alt="child">
+                            <i class="fa fa-child hidden"></i>
                         </td>
                         <td class="card">
-                            <img class="hidden" src="images/hand-peace.svg" alt="peace sign hand">
-                        </td>
-                    </tr>
-                    <tr class="row">
-                        <td class="card">
-                            <img class="hidden" src="images/bike.svg" alt="bike">
-                        </td>
-                        <td class="card">
-                            <img class="hidden" src="images/alarm-clock.svg" alt="alarm clock">
-                        </td>
-                        <td class="card">
-                            <img class="hidden" src="images/anchor.svg" alt="anchor">
-                        </td>
-                        <td class="card">
-                            <img class="hidden" src="images/bath.svg" alt="bath">
+                            <i class="fa fa-coffee hidden"></i>
                         </td>
                     </tr>
                     <tr class="row">
                         <td class="card">
-                            <img class="hidden" src="images/beer.svg" alt="beer">
+                            <i class="fa fa-bicycle hidden"></i>
                         </td>
                         <td class="card">
-                            <img class="hidden" src="images/bolt.svg" alt="bolt">
+                            <i class="fa fa-car hidden"></i>
                         </td>
                         <td class="card">
-                            <img class="hidden" src="images/child.svg" alt="child">
+                            <i class="fa fa-anchor hidden"></i>
                         </td>
                         <td class="card">
-                            <img class="hidden" src="images/hand-peace.svg" alt="peace sign hand">
+                            <i class="fa fa-bath hidden"></i>
+                        </td>
+                    </tr>
+                    <tr class="row">
+                        <td class="card">
+                            <i class="fa fa-beer hidden"></i>
+                        </td>
+                        <td class="card">
+                            <i class="fa fa-bolt hidden"></i>
+                        </td>
+                        <td class="card">
+                            <i class="fa fa-child hidden"></i>
+                        </td>
+                        <td class="card">
+                            <i class="fa fa-coffee hidden"></i>
                         </td>
                     </tr>
                 </tbody>
