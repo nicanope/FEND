@@ -11,7 +11,10 @@ const icons = [ 'fa-diamond',
                 'fa-bicycle'
             ];
 
+/* To avoid having to write the icons twice, 
+I concatenated the array to itself */
 const allIcons = icons.concat(icons);
+
 let openCards = [];
 const deck = document.querySelector('.deck');
 
@@ -19,11 +22,19 @@ shuffle(allIcons);
 
 for (let icon of allIcons) {
     let card = document.createElement('li');
-    card.innerHTML = `<li class="card"><i class="fa ${icon}"></i></li>`;
+    card.innerHTML = `<li class="card hide"><i class="fa ${icon}"></i></li>`;
     deck.appendChild(card);
 }
 
+const card = document.querySelectorAll('.card');
 
+function turnCard(e){
+    if (e.target.classList.contains('hide')) {
+    e.target.className = 'card open show';
+    }
+}
+
+deck.addEventListener('click', turnCard);
 
 // deck.addEventListener('click', function(event) {
 //     let icon = document.querySelectorAll('i');
