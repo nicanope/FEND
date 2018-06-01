@@ -31,6 +31,7 @@ const card = document.querySelectorAll('.card');
 function match(){
     const card1 = openCards[0].querySelector('i').className;
     const card2 = openCards[1].querySelector('i').className;
+    console.log(`1: ${card1} 2: ${card2}`);
     if (card1 === card2) {
         openCards[0].className = 'card match show';
         openCards[1].className = 'card match show';
@@ -39,10 +40,10 @@ function match(){
         setTimeout(function() {
             openCards[0].className = 'card hide';
             openCards[1].className = 'card hide';
+            openCards = [];
+            console.log('in timeout');
         }, 500)
-        openCards = [];
-    }
-    
+    } 
 }
 
 function turnCard(e){
@@ -52,7 +53,9 @@ function turnCard(e){
         e.target.className = 'card open show';
         openCards.push(clickedCard);
     } else {
-        match();
+       if (openCards.length == 2){
+           match();
+        }
     }
 }
 
