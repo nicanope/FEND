@@ -52,11 +52,9 @@ function turnCard(e){
     if (e.target.classList.contains('hide') && openCards.length<2) {
         e.target.className = 'card open show';
         openCards.push(clickedCard);
-    } else {
-       if (openCards.length == 2){
+    } if (openCards.length == 2){
            match();
         }
-    }
 }
 
 deck.addEventListener('click', turnCard);
