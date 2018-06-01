@@ -1,6 +1,4 @@
-/*
- * Create a list that holds all of your cards
- */
+// this array holds all the individual icons for the cards
 const icons = [ 'fa-diamond', 
                 'fa-paper-plane-o', 
                 'fa-anchor', 
@@ -15,18 +13,30 @@ const icons = [ 'fa-diamond',
 I concatenated the array to itself */
 const allIcons = icons.concat(icons);
 
+// this is the array that will hold the cards you've opened
 let openCards = [];
+// this is just a variable that holds the whole deck for the event listener
 const deck = document.querySelector('.deck');
 
+// using the shuffle algorithm that was provided in the starter code
 shuffle(allIcons);
 
+// once the icons are shuffled, this loop generates the cards within the deck
 for (let icon of allIcons) {
     let card = document.createElement('li');
     card.innerHTML = `<li class="card hide"><i class="fa ${icon}"></i></li>`;
     deck.appendChild(card);
 }
 
+// once the cards exist, this variable holds them
 const card = document.querySelectorAll('.card');
+
+/* this function checks whether the cards opened match,
+then, if they do, turns them green and keeps them open,
+then clears the openCards array.
+If they don't match, it starts a timeout, and then flips
+the cards back and clears the openCards array.
+*/
 
 function match(){
     const card1 = openCards[0].querySelector('i').className;
@@ -46,6 +56,13 @@ function match(){
     } 
 }
 
+/* this function listens to the click within the deck
+with the card as the target, and turns the card once clicked. 
+it specifies to only turn the card if it's hidden and there are
+less than two cards in the openCards array.
+if two cards are open, check if they match with the `match()`
+function */
+
 function turnCard(e){
     let clickedCard = e.target;
     console.log(openCards);
@@ -60,15 +77,9 @@ function turnCard(e){
 deck.addEventListener('click', turnCard);
 
 
+/* Shuffle function from http://stackoverflow.com/a/2450976 
+provided with the starter code*/
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
-
-// Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
