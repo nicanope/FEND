@@ -28,30 +28,38 @@ for (let icon of allIcons) {
 
 const card = document.querySelectorAll('.card');
 
+function match(){
+    const card1 = openCards[0].querySelector('i').className;
+    const card2 = openCards[1].querySelector('i').className;
+    if (card1 === card2) {
+        openCards[0].className = 'card match show';
+        openCards[1].className = 'card match show';
+        openCards = [];
+    } else {
+        setTimeout(function() {
+            openCards[0].className = 'card hide';
+            openCards[1].className = 'card hide';
+        }, 500)
+        openCards = [];
+    }
+    
+}
+
 function turnCard(e){
-    if (e.target.classList.contains('hide')) {
-    e.target.className = 'card open show';
+    let clickedCard = e.target;
+    console.log(openCards);
+    if (e.target.classList.contains('hide') && openCards.length<2) {
+        e.target.className = 'card open show';
+        openCards.push(clickedCard);
+    } else {
+        match();
     }
 }
 
 deck.addEventListener('click', turnCard);
 
-// deck.addEventListener('click', function(event) {
-//     let icon = document.querySelectorAll('i');
-
-// })
 
 
-// for (const card of cards) {
-//     card.addEventListener('click', function(e) {
-//         openCards.push(card);
-        // if (img.className === 'hidden' && count<3) {
-        //     img.className = 'visible';
-        // } else {
-        //     img.className = 'hidden';
-        // }
-//     })
-// }
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
