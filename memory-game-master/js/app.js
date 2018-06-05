@@ -19,27 +19,12 @@ let openCards = [];
 const deck = document.querySelector('.deck');
 // variable that holds the move count
 let moves = 0;
+// stores the moves counter
+const movesCounter = document.querySelector('.moves');
 // store the repeat button to restart the game
 const restartBtn = document.querySelector('.fa-repeat');
-// store the moves element in a variable
-const movesCounter = document.querySelector('.moves');
-// once the cards exist, this variable holds them
-const card = document.querySelectorAll('.card');
-// array that will hold all matched cards
-let matchedCards = [];
-
-let matchingCards = document.getElementsByClassName('match');
-
-// function called when the restart button is pressed
-// function restartGame(){
-//     moves = 0;
-//     // timer reset;
-//     // stars reset;
-//     // shuffle(allIcons);
-// createCards();
-// }
-
-// restartBtn.addEventListener('click', restartGame);
+// store the modal window
+let modalDialog = document.querySelector('.modalDialog');
 
 // using the shuffle algorithm that was provided in the starter code
 shuffle(allIcons);
@@ -64,6 +49,8 @@ the cards back and clears the openCards array.
 function match(){
     const card1 = openCards[0].querySelector('i').className;
     const card2 = openCards[1].querySelector('i').className;
+    let matchedCards = [];
+    let matchingCards = document.getElementsByClassName('match');
     console.log(`1: ${card1} 2: ${card2}`);
     if (card1 === card2) {
         openCards[0].className = 'card match show';
@@ -83,6 +70,7 @@ function match(){
             winner();
         }, 500)
     }
+    starRating();
 }
 
 /* this function listens to the click within the deck
@@ -93,13 +81,12 @@ less than two cards in the openCards array.
 if two cards are open, check if they match with the `match()`
 function */
 function turnCard(e){
+    // store the moves element in a variable
     let clickedCard = e.target;
     if (clickedCard.classList.contains('card')) {
     moves++;
     movesCounter.innerText = `${moves} moves`;
     }
-    console.log(moves);
-    console.log(openCards);
     if (clickedCard.classList.contains('hide') && openCards.length<2) {
         clickedCard.className = 'card open show';
         openCards.push(clickedCard);
@@ -107,6 +94,8 @@ function turnCard(e){
            match();
     }
 }
+
+
 
 // event listener for the cards that triggers the function above
 deck.addEventListener('click', turnCard);
@@ -127,9 +116,50 @@ function shuffle(array) {
     return array;
 }
 
-function winner(){
-    alert('You have won!');
+
+function starRating(){
+    const stars = document.querySelectorAll('.fa-star');
+    const starsArray = Array.apply(null, stars);
+    if (moves > 29 && moves <= 36) {
+        starsArray[2].className = 'fa fa-star hide';
+    }
+    if (moves > 36) {
+        starsArray[2].className = 'fa fa-star hide';
+        starsArray[1].className = 'fa fa-star hide';
+    }
 }
+
+
+function winner() {
+    let finalMoves = document.querySelector('.total-moves');
+    let finalStars = document.querySelector('.star-rating');
+    let finalTime = document.querySelector('.total-time');
+    let starScore = document.querySelector('.stars')
+    modalDialog.className = "modalDialog";
+    finalMoves.innerHTML = `<p>You made ${moves} moves</p>`;
+    finalStars.innerHTML = `<span>${starScore}</span>`;
+    // finalTime.innerHTML = `<p>It took you ${timer}</p>`
+}
+
+function close() {
+    modalDialog.className = "modalDialog hide";
+    // resetGame();
+}
+
+modalDialog.addEventListener('click', close);
+
+// function called when the restart button is pressed
+function resetGame(){
+    deck.innerHTML = '';
+    shuffle(allIcons);
+    createCards();
+    moves = 0;
+    movesCounter.innerText = `${moves} moves`;
+    // timer reset;
+    starRating();
+}
+
+restartBtn.addEventListener('click', resetGame);
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
