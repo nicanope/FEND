@@ -120,6 +120,9 @@ function shuffle(array) {
 function starRating(){
     const stars = document.querySelectorAll('.fa-star');
     const starsArray = Array.apply(null, stars);
+    if (moves === 0) {
+        starsArray.forEach(x => x.className = "fa fa-star");
+    }
     if (moves > 29 && moves <= 36) {
         starsArray[2].className = 'fa fa-star hide';
     }
@@ -137,13 +140,13 @@ function winner() {
     let starScore = document.querySelector('.stars')
     modalDialog.className = "modalDialog";
     finalMoves.innerHTML = `<p>You made ${moves} moves</p>`;
-    finalStars.innerHTML = `<span>${starScore}</span>`;
+    finalStars.innerHTML = `${starScore.innerHTML}`;
     // finalTime.innerHTML = `<p>It took you ${timer}</p>`
 }
 
 function close() {
     modalDialog.className = "modalDialog hide";
-    // resetGame();
+    resetGame();
 }
 
 modalDialog.addEventListener('click', close);

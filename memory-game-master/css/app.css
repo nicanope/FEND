@@ -124,6 +124,11 @@ h1 {
     display: none;
 }
 
+.stars > li {
+    list-style: none;
+    display: inline-block;
+ }
+
 /* Modal dialog style 
 from: https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/*/
 
