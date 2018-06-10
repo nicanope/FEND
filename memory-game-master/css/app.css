@@ -98,7 +98,6 @@ h1 {
 
 .score-panel .stars {
     padding: 0;
-    display: inline-block;
     margin: 0 2px 0 0;
 }
 
@@ -159,6 +158,15 @@ from: https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html
 	background: -o-linear-gradient(#fff, #999);
 }
 
+.openModalContent {
+    text-align: center;
+}
+
 .modalDialog.hide {
     display: none;
+}
+
+.star-rating li {
+    list-style: none;
+    display: inline;
 }

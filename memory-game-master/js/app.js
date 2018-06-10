@@ -66,6 +66,7 @@ function match(){
             console.log('in timeout');
         }, 500)
     } if (matchingCards.length == 16){
+        stopwatch.stop();
         setTimeout(function() {
             winner();
         }, 500)
@@ -84,13 +85,17 @@ function turnCard(e){
     // store the moves element in a variable
     let clickedCard = e.target;
     if (clickedCard.classList.contains('card')) {
+    if (moves === 0) {
+        stopwatch.start();
+    }
     moves++;
     movesCounter.innerText = `${moves} moves`;
     }
     if (clickedCard.classList.contains('hide') && openCards.length<2) {
         clickedCard.className = 'card open show';
         openCards.push(clickedCard);
-    } if (openCards.length == 2){
+    }
+    if (openCards.length == 2){
            match();
     }
 }
@@ -141,7 +146,7 @@ function winner() {
     modalDialog.className = "modalDialog";
     finalMoves.innerHTML = `<p>You made ${moves} moves</p>`;
     finalStars.innerHTML = `${starScore.innerHTML}`;
-    // finalTime.innerHTML = `<p>It took you ${timer}</p>`
+    finalTime.innerHTML = `<p>It took you ${timer.innerText}</p>`
 }
 
 function close() {
@@ -163,6 +168,56 @@ function resetGame(){
 }
 
 restartBtn.addEventListener('click', resetGame);
+
+/* Code for the timer functionality from 
+https://codepen.io/mythicalpizza/pen/WvdeJG 
+with modifications so it starts when the first card is clicked
+and stops when all cards are matched*/
+
+var min,sec,ms,count, malt, salt, msalt;
+
+var stopwatch = {
+    start: function(){
+        sec = 0;
+        min = 0;
+        count = setInterval(function() {
+            if(sec == 60){
+                sec = 0;
+                min++;
+            }
+            else{
+                sec++;
+            }
+        
+            malt = stopwatch.pad(min);
+            salt = stopwatch.pad(sec);
+            
+            stopwatch.update(`${malt} : ${salt}`);
+        }, 1000);
+    },
+    stop: function(){
+        clearInterval(count);
+    },
+  
+    update: function (txt) {
+        var temp = document.getElementById("timer");
+    temp.firstChild.nodeValue = txt;
+    },
+    
+    pad: function(time){
+        var temp;
+        if(time < 10){
+        temp = "0" + time;
+        }
+        else{
+        temp = time;
+        }
+        return temp;
+    }
+}
+
+
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -173,3 +228,43 @@ restartBtn.addEventListener('click', resetGame);
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+//  timer
+// var timer;
+// var output;
+// var game;
+// function init() {
+//    game = new Scene();
+//    output = document.getElementById("output");
+//    timer = new Timer();
+//    timer.reset();
+//    game.start();
+// } // end init
+// function update() {
+//    game.hide();
+//    currentTime = timer.getElapsedTime();
+//    output.innerHTML = currentTime;
+// } // end update
+// function reset() {
+//    timer.reset();
+// } 
+
+
+// var start = new Date().getTime(),
+//     elapsed = '0.0';
+
+// function startTime(e) {
+// window.setInterval(function()
+// {
+//     var time = new Date().getTime() - start;
+
+//     elapsed = Math.floor(time / 100) / 10;
+//     if(Math.round(elapsed) == elapsed) { elapsed += '.0'; }
+
+//     document.title = elapsed;
+
+// }, 100);
+// }
+
+// let timeElapsed = document.querySelector('.timer');
+// timeElapsed.innerText = (elapsed);
