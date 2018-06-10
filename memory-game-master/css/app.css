@@ -34,9 +34,7 @@ h1 {
     font-size: 3em;
 }
 
-/*
- * Styles for the deck of cards
- */
+/* Styles for the deck of cards */
 
 .deck {
     width: 660px;
@@ -83,9 +81,7 @@ h1 {
     font-size: 33px;
 }
 
-/*
- * Styles for the Score Panel
- */
+/* Styles for the Score Panel */
 
 .score-panel {
     display: flex;
@@ -128,7 +124,7 @@ h1 {
     display: inline-block;
  }
 
-/* Modal dialog style 
+/* Modal dialog style partly
 from: https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/*/
 
 .modalDialog {

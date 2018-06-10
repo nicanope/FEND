@@ -121,7 +121,9 @@ function shuffle(array) {
     return array;
 }
 
-
+/* this function runs during the game and determines how
+many stars you get in the star rating, depending on how many
+moves you've made */
 function starRating(){
     const stars = document.querySelectorAll('.fa-star');
     const starsArray = Array.apply(null, stars);
@@ -137,7 +139,8 @@ function starRating(){
     }
 }
 
-
+/* when you finish the game (all cards match) this function
+is called to trigger the modal with the game stats */
 function winner() {
     let finalMoves = document.querySelector('.total-moves');
     let finalStars = document.querySelector('.star-rating');
@@ -149,6 +152,8 @@ function winner() {
     finalTime.innerHTML = `<p>It took you ${timer.innerText}</p>`
 }
 
+/* function called then the modal is clicked
+to reset and restart the game */
 function close() {
     modalDialog.className = "modalDialog hide";
     resetGame();
@@ -172,7 +177,7 @@ restartBtn.addEventListener('click', resetGame);
 /* Code for the timer functionality from 
 https://codepen.io/mythicalpizza/pen/WvdeJG 
 with modifications so it starts when the first card is clicked
-and stops when all cards are matched*/
+and stops when all cards are matched */
 
 var min,sec,ms,count, malt, salt, msalt;
 
@@ -215,56 +220,3 @@ var stopwatch = {
         return temp;
     }
 }
-
-
-
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
-
-//  timer
-// var timer;
-// var output;
-// var game;
-// function init() {
-//    game = new Scene();
-//    output = document.getElementById("output");
-//    timer = new Timer();
-//    timer.reset();
-//    game.start();
-// } // end init
-// function update() {
-//    game.hide();
-//    currentTime = timer.getElapsedTime();
-//    output.innerHTML = currentTime;
-// } // end update
-// function reset() {
-//    timer.reset();
-// } 
-
-
-// var start = new Date().getTime(),
-//     elapsed = '0.0';
-
-// function startTime(e) {
-// window.setInterval(function()
-// {
-//     var time = new Date().getTime() - start;
-
-//     elapsed = Math.floor(time / 100) / 10;
-//     if(Math.round(elapsed) == elapsed) { elapsed += '.0'; }
-
-//     document.title = elapsed;
-
-// }, 100);
-// }
-
-// let timeElapsed = document.querySelector('.timer');
-// timeElapsed.innerText = (elapsed);
