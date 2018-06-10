@@ -163,12 +163,14 @@ modalDialog.addEventListener('click', close);
 
 // function called when the restart button is pressed
 function resetGame(){
+    let timer = document.getElementById('timer');
     deck.innerHTML = '';
     shuffle(allIcons);
     createCards();
     moves = 0;
     movesCounter.innerText = `${moves} moves`;
-    // timer reset;
+    stopwatch.stop();
+    timer.innerText = '00:00';
     starRating();
 }
 
