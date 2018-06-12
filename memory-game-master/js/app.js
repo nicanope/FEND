@@ -85,18 +85,21 @@ function turnCard(e){
     // store the moves element in a variable
     let clickedCard = e.target;
     if (clickedCard.classList.contains('card')) {
-    if (moves === 0) {
-        stopwatch.start();
-    }
-    moves++;
-    movesCounter.innerText = `${moves} moves`;
+        if (clickedCard.className === "card open show") {
+            moves -= 1;
+        }
+        if (moves === 0) {
+            stopwatch.start();
+        }
+        moves++;
+        movesCounter.innerText = `${moves} moves`;
     }
     if (clickedCard.classList.contains('hide') && openCards.length<2) {
         clickedCard.className = 'card open show';
         openCards.push(clickedCard);
     }
-    if (openCards.length == 2){
-           match();
+    if (openCards.length == 2 && openCards != "undefined"){
+            match();
     }
 }
 

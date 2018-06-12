@@ -4,6 +4,7 @@
 
 * [Game Instructions] (#game)
 * [Functionality] (#functionality)
+* [Bugs] (#bugs)
 * [Udacity Project Instructions](#instructions)
 * [Contributing](#contributing)
 
@@ -23,6 +24,11 @@ Once all 16 cards are matched, the game will stop the timer and open a modal wit
 - your star rating
 
 Upon clicking anywhere on the screen, the modal will disappear and the game, timer, moves and stars will be reset.
+
+## Bugs
+
+Please report any bugs here or by emailing nicanope@gmail.com.
+Thanks!
 
 ## Udacity Project Instructions
 
