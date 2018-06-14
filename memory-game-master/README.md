@@ -33,11 +33,12 @@ Thanks!
 
 ## Dependencies
 
-- [Font Awesome](https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css)
-
-- [Google Fonts](https://fonts.googleapis.com/css?family=Coda)
+- [Font Awesome](https://fontawesome.com/)
+(in head: https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css)
+- [Google Fonts](https://fonts.google.com/)
+(in head: https://fonts.googleapis.com/css?family=Coda)
  
- *** Both of these were already in Udacity's starter code for this project  
+ **Both of these were already in Udacity's starter code for this project**  
 
  _______________________________________________________
  Everything below this line was in the file originally supplied by Udacity
