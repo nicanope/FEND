@@ -33,10 +33,14 @@ Thanks!
 
 ## Dependencies
 
-Required by my first reviewer to list this.
-I used only Vanilla JavaScript to build this game.
+[Font Awesome](https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css)
+[Google Fonts](https://fonts.googleapis.com/css?family=Coda)
+ * Both of these were already in Udacity's starter code for this project * 
 
-## Udacity Project Instructions
+ _______________________________________________________
+ Everything below this line was in the file originally supplied by Udacity
+
+## Udacity Project Instructions 
 
 The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
 
