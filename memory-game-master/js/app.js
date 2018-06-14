@@ -91,8 +91,10 @@ function turnCard(e){
         if (moves === 0) {
             stopwatch.start();
         }
+        if (openCards.length >= 1) {
         moves++;
         movesCounter.innerText = `${moves} moves`;
+        }
     }
     if (clickedCard.classList.contains('hide') && openCards.length<2) {
         clickedCard.className = 'card open show';
@@ -112,7 +114,7 @@ deck.addEventListener('click', turnCard);
 /* Shuffle function from http://stackoverflow.com/a/2450976 
 provided with the starter code*/
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -133,10 +135,10 @@ function starRating(){
     if (moves === 0) {
         starsArray.forEach(x => x.className = "fa fa-star");
     }
-    if (moves > 29 && moves <= 36) {
+    if (moves > 14 && moves <= 18) {
         starsArray[2].className = 'fa fa-star hide';
     }
-    if (moves > 36) {
+    if (moves > 18) {
         starsArray[2].className = 'fa fa-star hide';
         starsArray[1].className = 'fa fa-star hide';
     }
@@ -184,9 +186,9 @@ https://codepen.io/mythicalpizza/pen/WvdeJG
 with modifications so it starts when the first card is clicked
 and stops when all cards are matched */
 
-var min,sec,ms,count, malt, salt, msalt;
+let min,sec,ms,count, malt, salt, msalt;
 
-var stopwatch = {
+let stopwatch = {
     start: function(){
         sec = 0;
         min = 0;

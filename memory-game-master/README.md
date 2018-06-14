@@ -2,9 +2,10 @@
 
 ## Table of Contents
 
-* [Game Instructions] (#game)
-* [Functionality] (#functionality)
-* [Bugs] (#bugs)
+* [Game Instructions](#game)
+* [Functionality](#functionality)
+* [Bugs](#bugs)
+* [Dependencies](#dependencies)
 * [Udacity Project Instructions](#instructions)
 * [Contributing](#contributing)
 
@@ -29,6 +30,11 @@ Upon clicking anywhere on the screen, the modal will disappear and the game, tim
 
 Please report any bugs here or by emailing nicanope@gmail.com.
 Thanks!
+
+## Dependencies
+
+Required by my first reviewer to list this.
+I used only Vanilla JavaScript to build this game.
 
 ## Udacity Project Instructions
 
