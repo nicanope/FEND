@@ -100,7 +100,7 @@ function turnCard(e){
         clickedCard.className = 'card open show';
         openCards.push(clickedCard);
     }
-    if (openCards.length == 2 && openCards != "undefined"){
+    if (openCards.length == 2 && openCards !== "undefined"){
             match();
     }
 }
@@ -112,7 +112,7 @@ deck.addEventListener('click', turnCard);
 
 
 /* Shuffle function from http://stackoverflow.com/a/2450976 
-provided with the starter code*/
+provided with the starter code */
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -188,12 +188,14 @@ and stops when all cards are matched */
 
 let min,sec,ms,count, malt, salt, msalt;
 
+// something's wrong : the timer is counting two seconds in a second and
+// it's not resetting with the button or the winner() function
 let stopwatch = {
     start: function(){
         sec = 0;
         min = 0;
         count = setInterval(function() {
-            if(sec == 60){
+            if(sec == 59){
                 sec = 0;
                 min++;
             }
@@ -212,15 +214,15 @@ let stopwatch = {
     },
   
     update: function (txt) {
-        var temp = document.getElementById("timer");
-    temp.firstChild.nodeValue = txt;
+        let temp = document.getElementById("timer");
+        temp.firstChild.nodeValue = txt;
     },
     
     pad: function(time){
-        var temp;
+        let temp;
         if(time < 10){
         temp = "0" + time;
-        }
+        } 
         else{
         temp = time;
         }

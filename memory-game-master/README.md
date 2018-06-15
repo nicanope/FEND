@@ -11,7 +11,7 @@
 
 ## Game
 
-Flip cards to attempt to match them. You win the game once all card pairs are matched. Your score is in star rating; the less moves you need to win the game, the more stars you get. Try to finish the game in less than 30 moves for a 3-star rating (maximum).
+Flip cards to attempt to match them. You win the game once all card pairs are matched. Your score is in star rating; the less moves you need to win the game,the more stars you get. Try to finish the game in less than 14 moves for a 3-star rating (maximum).
 
 ## Functionality
 
@@ -40,7 +40,12 @@ Thanks!
  
  **Both of these were already in Udacity's starter code for this project**  
 
+- Code for the [timer](https://codepen.io/mythicalpizza/pen/WvdeJG) functionality. Adapted to start with the first card turned and stop either when the game ends or when the restart button is pressed. 
+
+- Shuffle function from http://stackoverflow.com/a/2450976 provided with the starter code
+
  _______________________________________________________
+ 
  Everything below this line was in the file originally supplied by Udacity
 
 ## Udacity Project Instructions 
