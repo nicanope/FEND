@@ -25,6 +25,8 @@ const movesCounter = document.querySelector('.moves');
 const restartBtn = document.querySelector('.fa-repeat');
 // store the modal window
 let modalDialog = document.querySelector('.modalDialog');
+// determines whether you've clicked a card yet to start the timer
+let firstClick = true;
 
 // using the shuffle algorithm that was provided in the starter code
 shuffle(allIcons);
@@ -88,8 +90,9 @@ function turnCard(e){
         if (clickedCard.className === "card open show") {
             moves -= 1;
         }
-        if (moves === 0) {
+        if (firstClick) {
             stopwatch.start();
+            firstClick = false;
         }
         if (openCards.length >= 1) {
         moves++;
@@ -104,8 +107,6 @@ function turnCard(e){
             match();
     }
 }
-
-
 
 // event listener for the cards that triggers the function above
 deck.addEventListener('click', turnCard);
@@ -173,6 +174,7 @@ function resetGame(){
     shuffle(allIcons);
     createCards();
     moves = 0;
+    firstClick = true;
     movesCounter.innerText = `${moves} moves`;
     stopwatch.stop();
     timer.innerText = '00:00';
@@ -186,7 +188,7 @@ https://codepen.io/mythicalpizza/pen/WvdeJG
 with modifications so it starts when the first card is clicked
 and stops when all cards are matched */
 
-let min,sec,ms,count, malt, salt, msalt;
+var min,sec,ms,count, malt, salt, msalt;
 
 // something's wrong : the timer is counting two seconds in a second and
 // it's not resetting with the button or the winner() function
